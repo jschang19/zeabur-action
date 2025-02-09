@@ -32,12 +32,16 @@
     "local-action": "npx local-action . src/main.ts .env",
     "package": "npx rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "package:watch": "npm run package -- --watch",
-    "test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 npx jest",
+    "test": "npx jest NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1",
     "all": "npm run format:write && npm run lint && npm run test && npm run coverage && npm run package"
   },
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.11.1"
+    "@actions/core": "^1.11.1",
+    "archiver": "^7.0.1",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "undici": "^7.3.0"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.6",
@@ -46,6 +50,7 @@
     "@rollup/plugin-commonjs": "^28.0.1",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-typescript": "^12.1.1",
+    "@types/archiver": "^6.0.3",
     "@types/jest": "^29.5.14",
     "@types/node": "^20.17.16",
     "@typescript-eslint/eslint-plugin": "^8.23.0",
