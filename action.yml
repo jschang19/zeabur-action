@@ -1,20 +1,28 @@
-name: The name of your action here
-description: Provide a description here
-author: Your name or organization here
+name: Deploy to Zeabur
+description: Deploy a service to Zeabur
 
-# Add your action's branding here. This will appear on the GitHub Marketplace.
 branding:
-  icon: heart
-  color: red
+  icon: arrow-up-circle
+  color: purple
 
-# Define your inputs here.
 inputs:
-  milliseconds:
-    description: Your input description here
+  project_id:
+    description: The project ID
     required: true
-    default: '1000'
+    type: string
+  service_id:
+    description: The service ID
+    required: true
+    type: string
+  environment_id:
+    description: The environment ID
+    required: true
+    type: string
+  zeabur_api_key:
+    description: The Zeabur API key
+    required: true
+    type: string
 
-# Define your outputs here.
 outputs:
   time:
     description: Your output description here
